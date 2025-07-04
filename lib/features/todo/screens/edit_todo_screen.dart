@@ -19,6 +19,24 @@ class EditTodoScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Edit Todo"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.check),
+            onPressed: () {
+              final newText = textController.text.trim();
+              if (newText.isEmpty) {
+                Get.snackbar(
+                  "Gagal",
+                  "Todo tidak boleh kosong",
+                  snackPosition: SnackPosition.BOTTOM,
+                );
+                return;
+              }
+              controller.editTodo(index, newText);
+              Get.back();
+            },
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -31,37 +49,9 @@ class EditTodoScreen extends StatelessWidget {
                 border: InputBorder.none,
               ),
               style: Theme.of(context).textTheme.titleMedium,
+              autofocus: true,
             ),
             const Divider(height: 1),
-            const SizedBox(height: 24),
-            SizedBox(
-              width: double.infinity,
-              child: TextButton.icon(
-                onPressed: () {
-                  if (textController.text.trim().isEmpty) {
-                    Get.snackbar(
-                      "Gagal",
-                      "Todo tidak boleh kosong",
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                    return;
-                  }
-
-                  controller.editTodo(index, textController.text.trim());
-                  Get.back();
-                },
-                icon: const Icon(Icons.check),
-                label: const Text("Simpan Perubahan"),
-                style: TextButton.styleFrom(
-                  foregroundColor: Theme.of(context).colorScheme.primary,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),
