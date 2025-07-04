@@ -1,3 +1,3 @@
-# flutter_getx
+# To Do List App
 
-A new Flutter project.
+Aplikasi To Do sederhana menggunakan flutter dengan GetX State Management dan memiliki dark mode 
