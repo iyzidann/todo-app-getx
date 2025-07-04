@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/todo_controller.dart';
-import '../controllers/theme_controller.dart';
-import '../routes/app_routes.dart';
+import '../../../controllers/theme_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   final TodoController controller = Get.put(TodoController());
