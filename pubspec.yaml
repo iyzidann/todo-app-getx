@@ -11,11 +11,18 @@ dependencies:
     sdk: flutter
   get: ^4.6.6
   get_storage: ^2.1.1
+  math_expressions: ^2.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"

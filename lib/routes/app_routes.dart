@@ -6,6 +6,7 @@ import '../features/todo/screens/edit_todo_screen.dart';
 import '../features/notes/screens/note_screen.dart';
 import '../features/notes/screens/add_note_screen.dart';
 import '../features/notes/screens/view_note_screen.dart';
+import '../features/calculator/screens/calculator_screen.dart';
 
 class AppRoutes {
   static const main = '/';
@@ -15,6 +16,7 @@ class AppRoutes {
   static const notes = '/notes';
   static const addNote = '/add-note';
   static const viewNote = '/view-note';
+  static const calculator = '/calculator';
 
   static final pages = [
     GetPage(name: main, page: () => const MainScreen()),
@@ -24,5 +26,6 @@ class AppRoutes {
     GetPage(name: notes, page: () => NoteScreen()),
     GetPage(name: addNote, page: () => AddNoteScreen()),
     GetPage(name: viewNote, page: () => ViewNoteScreen()),
+    GetPage(name: calculator, page: () => CalculatorScreen()),
   ];
 }

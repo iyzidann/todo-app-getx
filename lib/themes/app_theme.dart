@@ -26,6 +26,15 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.black),
     ),
     iconTheme: const IconThemeData(color: Colors.black),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.grey.shade600,
+      selectedIconTheme: const IconThemeData(color: Colors.black),
+      unselectedIconTheme: IconThemeData(color: Colors.grey.shade600),
+    ),
+
   );
 
   static final dark = ThemeData(

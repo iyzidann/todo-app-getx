@@ -30,48 +30,54 @@ class NoteScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final note = controller.notes[index];
 
-            return InkWell(
-              onTap: () => Get.toNamed('/view-note', arguments: {
-                'note': note,
-                'index': index,
-              }),
-              borderRadius: BorderRadius.circular(12),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Icon(Icons.sticky_note_2_outlined, size: 24),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            note.title,
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            note.content.length > 100
-                                ? '${note.content.substring(0, 100)}...'
-                                : note.content,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(color: Colors.grey),
-                          ),
-                        ],
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 2,
+              child: InkWell(
+                onTap: () => Get.toNamed('/view-note', arguments: {
+                  'note': note,
+                  'index': index,
+                }),
+                borderRadius: BorderRadius.circular(12),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(Icons.sticky_note_2_outlined, size: 24),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              note.title,
+                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
+                            const SizedBox(height: 6),
+                            Text(
+                              note.content.length > 100
+                                  ? '${note.content.substring(0, 100)}...'
+                                  : note.content,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    IconButton(
-                      onPressed: () => controller.deleteNote(index),
-                      icon: const Icon(Icons.delete_outline, size: 20),
-                      visualDensity: VisualDensity.compact,
-                    )
-                  ],
+                      IconButton(
+                        onPressed: () => controller.deleteNote(index),
+                        icon: const Icon(Icons.delete_outline, size: 20),
+                        visualDensity: VisualDensity.compact,
+                      )
+                    ],
+                  ),
                 ),
               ),
             );
