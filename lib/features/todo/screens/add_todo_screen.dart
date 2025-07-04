@@ -19,17 +19,40 @@ class AddTodoScreen extends StatelessWidget {
             TextField(
               controller: textController,
               decoration: const InputDecoration(
-                labelText: "Todo",
+                hintText: "Tulis todo baru...",
+                border: InputBorder.none,
+              ),
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const Divider(height: 1),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () {
+                  if (textController.text.trim().isEmpty) {
+                    Get.snackbar(
+                      "Gagal",
+                      "Todo tidak boleh kosong",
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
+                    return;
+                  }
+                  controller.addTodo(textController.text.trim());
+                  Get.back();
+                },
+                icon: const Icon(Icons.check),
+                label: const Text("Simpan"),
+                style: TextButton.styleFrom(
+                  foregroundColor: Theme.of(context).colorScheme.primary,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                  ),
+                ),
               ),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                controller.addTodo(textController.text);
-                Get.back(); // kembali ke HomeScreen
-              },
-              child: const Text("Simpan"),
-            )
           ],
         ),
       ),

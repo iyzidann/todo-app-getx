@@ -17,22 +17,50 @@ class EditTodoScreen extends StatelessWidget {
     textController.text = oldValue;
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Edit Todo")),
+      appBar: AppBar(
+        title: const Text("Edit Todo"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: textController,
-              decoration: const InputDecoration(labelText: "Edit todo"),
+              decoration: const InputDecoration(
+                hintText: "Edit todo...",
+                border: InputBorder.none,
+              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                controller.editTodo(index, textController.text);
-                Get.back();
-              },
-              child: const Text("Simpan"),
+            const Divider(height: 1),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () {
+                  if (textController.text.trim().isEmpty) {
+                    Get.snackbar(
+                      "Gagal",
+                      "Todo tidak boleh kosong",
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
+                    return;
+                  }
+
+                  controller.editTodo(index, textController.text.trim());
+                  Get.back();
+                },
+                icon: const Icon(Icons.check),
+                label: const Text("Simpan Perubahan"),
+                style: TextButton.styleFrom(
+                  foregroundColor: Theme.of(context).colorScheme.primary,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
             )
           ],
         ),

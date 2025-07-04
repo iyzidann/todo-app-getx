@@ -9,19 +9,42 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = themeController.isDark;
+    final textColor = Theme.of(context).textTheme.bodyLarge?.color;
+    final containerColor = Theme.of(context).colorScheme.surfaceVariant;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Settings")),
-      body: ListView(
-        children: [
-          Obx(() => SwitchListTile(
-                title: const Text("Dark Mode"),
-                secondary: Icon(themeController.isDark.value
-                    ? Icons.dark_mode
-                    : Icons.light_mode),
-                value: themeController.isDark.value,
-                onChanged: (_) => themeController.toggleTheme(),
-              )),
-        ],
+      appBar: AppBar(
+        title: const Text("Pengaturan"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Obx(() => Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              decoration: BoxDecoration(
+                color: containerColor,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    isDark.value ? Icons.dark_mode : Icons.light_mode,
+                    color: textColor,
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Text(
+                      "Mode Gelap",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                  Switch(
+                    value: isDark.value,
+                    onChanged: (_) => themeController.toggleTheme(),
+                  ),
+                ],
+              ),
+            )),
       ),
     );
   }

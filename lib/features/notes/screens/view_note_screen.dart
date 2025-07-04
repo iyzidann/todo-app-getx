@@ -20,32 +20,52 @@ class ViewNoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lihat/Edit Catatan"),
+        title: const Text("Edit Catatan"),
+        centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.save),
+            icon: const Icon(Icons.check),
             onPressed: () {
-              controller.editNote(index, titleC.text, contentC.text);
+              if (titleC.text.trim().isEmpty &&
+                  contentC.text.trim().isEmpty) {
+                Get.snackbar(
+                  "Gagal",
+                  "Catatan tidak boleh kosong",
+                  snackPosition: SnackPosition.BOTTOM,
+                );
+                return;
+              }
+              controller.editNote(index, titleC.text.trim(), contentC.text.trim());
               Get.back();
             },
           )
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: titleC,
-              decoration: const InputDecoration(labelText: "Judul"),
+              decoration: const InputDecoration(
+                hintText: "Judul catatan",
+                border: InputBorder.none,
+              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
+            const Divider(height: 1),
             const SizedBox(height: 12),
             Expanded(
               child: TextField(
                 controller: contentC,
                 maxLines: null,
                 expands: true,
-                decoration: const InputDecoration(labelText: "Isi Catatan"),
+                decoration: const InputDecoration(
+                  hintText: "Tulis isi catatan...",
+                  border: InputBorder.none,
+                ),
+                style: Theme.of(context).textTheme.bodyMedium,
+                keyboardType: TextInputType.multiline,
               ),
             ),
           ],

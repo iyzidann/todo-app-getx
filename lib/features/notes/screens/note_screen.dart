@@ -10,44 +10,68 @@ class NoteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Notes")),
+      appBar: AppBar(
+        title: const Text("Catatan"),
+      ),
       body: Obx(() {
         if (controller.notes.isEmpty) {
-          return const Center(child: Text("Belum ada catatan"));
+          return const Center(
+            child: Text(
+              "Belum ada catatan",
+              style: TextStyle(fontSize: 16),
+            ),
+          );
         }
-        return ListView.builder(
-          padding: const EdgeInsets.all(12),
+
+        return ListView.separated(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           itemCount: controller.notes.length,
+          separatorBuilder: (_, __) => const SizedBox(height: 10),
           itemBuilder: (context, index) {
             final note = controller.notes[index];
-            return Card(
-              elevation: 2,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ListTile(
-                contentPadding: const EdgeInsets.all(16),
-                title: Text(
-                  note.title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    note.content.length > 100
-                        ? '${note.content.substring(0, 100)}...'
-                        : note.content,
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ),
-                onTap: () => Get.toNamed('/view-note', arguments: {
-                  'note': note,
-                  'index': index,
-                }),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed: () => controller.deleteNote(index),
+
+            return InkWell(
+              onTap: () => Get.toNamed('/view-note', arguments: {
+                'note': note,
+                'index': index,
+              }),
+              borderRadius: BorderRadius.circular(12),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.sticky_note_2_outlined, size: 24),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            note.title,
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            note.content.length > 100
+                                ? '${note.content.substring(0, 100)}...'
+                                : note.content,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () => controller.deleteNote(index),
+                      icon: const Icon(Icons.delete_outline, size: 20),
+                      visualDensity: VisualDensity.compact,
+                    )
+                  ],
                 ),
               ),
             );
@@ -56,7 +80,7 @@ class NoteScreen extends StatelessWidget {
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.toNamed('/add-note'),
-        child: const Icon(Icons.note_add),
+        child: const Icon(Icons.add),
       ),
     );
   }
