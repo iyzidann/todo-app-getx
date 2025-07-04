@@ -15,7 +15,6 @@ class AddNoteScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tambah Catatan"),
-        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
