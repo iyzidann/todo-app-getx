@@ -21,7 +21,6 @@ class ViewNoteScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Edit Catatan"),
-        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
