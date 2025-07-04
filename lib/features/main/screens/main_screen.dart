@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../todo/screens/home_screen.dart';
 import '../../notes/screens/note_screen.dart';
+import '../../settings/screens/settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,6 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> pages = [
     HomeScreen(),
     NoteScreen(),
+    SettingsScreen(),
   ];
 
   @override
@@ -28,6 +30,7 @@ class _MainScreenState extends State<MainScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.check_circle), label: "Todo"),
           BottomNavigationBarItem(icon: Icon(Icons.note), label: "Notes"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],
       ),
     );

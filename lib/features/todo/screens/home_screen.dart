@@ -15,12 +15,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Todo List"),
-        actions: [
-          Obx(() => Switch(
-                value: themeController.isDark.value,
-                onChanged: (_) => themeController.toggleTheme(),
-              )),
-        ],
       ),
       body: Obx(() {
         if (controller.todos.isEmpty) {

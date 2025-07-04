@@ -50,5 +50,13 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.white),
     ),
     iconTheme: const IconThemeData(color: Colors.white),
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.black,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.grey,
+      selectedIconTheme: IconThemeData(color: Colors.white),
+      unselectedIconTheme: IconThemeData(color: Colors.grey),
+    ),
   );
 }
