@@ -34,7 +34,7 @@ class NoteScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              elevation: 2,
+              elevation: 1,
               child: InkWell(
                 onTap: () => Get.toNamed('/view-note', arguments: {
                   'note': note,
