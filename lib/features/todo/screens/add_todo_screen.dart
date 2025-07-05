@@ -11,15 +11,15 @@ class AddTodoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Tambah Todo")),
+      appBar: AppBar(title: Text('add_todo'.tr)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: textController,
-              decoration: const InputDecoration(
-                hintText: "Tulis todo baru...",
+              decoration: InputDecoration(
+                hintText: 'todo_hint'.tr,
                 border: InputBorder.none,
               ),
               style: Theme.of(context).textTheme.titleMedium,
@@ -32,8 +32,8 @@ class AddTodoScreen extends StatelessWidget {
                 onPressed: () {
                   if (textController.text.trim().isEmpty) {
                     Get.snackbar(
-                      "Gagal",
-                      "Todo tidak boleh kosong",
+                      'oops'.tr,
+                      'empty_todo_warning'.tr,
                       snackPosition: SnackPosition.BOTTOM,
                     );
                     return;
@@ -42,7 +42,7 @@ class AddTodoScreen extends StatelessWidget {
                   Get.back();
                 },
                 icon: const Icon(Icons.check),
-                label: const Text("Simpan"),
+                label: Text('save'.tr),
                 style: TextButton.styleFrom(
                   foregroundColor: Theme.of(context).colorScheme.primary,
                   padding: const EdgeInsets.symmetric(vertical: 14),

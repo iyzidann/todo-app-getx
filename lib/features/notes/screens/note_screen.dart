@@ -11,13 +11,13 @@ class NoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Catatan"),
+        title: Text('notes'.tr),
       ),
       body: Obx(() {
         if (controller.notes.isEmpty) {
-          return const Center(
+          return Center(
             child: Text(
-              "Belum ada catatan",
+              'empty_note'.tr,
               style: TextStyle(fontSize: 16),
             ),
           );

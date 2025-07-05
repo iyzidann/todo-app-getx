@@ -20,7 +20,7 @@ class ViewNoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Edit Catatan"),
+        title: Text('edit_note'.tr),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
@@ -28,8 +28,8 @@ class ViewNoteScreen extends StatelessWidget {
               if (titleC.text.trim().isEmpty &&
                   contentC.text.trim().isEmpty) {
                 Get.snackbar(
-                  "Gagal",
-                  "Catatan tidak boleh kosong",
+                  'oops'.tr,
+                  'empty_note_warning'.tr,
                   snackPosition: SnackPosition.BOTTOM,
                 );
                 return;
@@ -46,8 +46,8 @@ class ViewNoteScreen extends StatelessWidget {
           children: [
             TextField(
               controller: titleC,
-              decoration: const InputDecoration(
-                hintText: "Judul catatan",
+              decoration: InputDecoration(
+                hintText: 'note_title_hint'.tr,
                 border: InputBorder.none,
               ),
               style: Theme.of(context).textTheme.titleMedium,
@@ -59,8 +59,8 @@ class ViewNoteScreen extends StatelessWidget {
                 controller: contentC,
                 maxLines: null,
                 expands: true,
-                decoration: const InputDecoration(
-                  hintText: "Tulis isi catatan...",
+                decoration: InputDecoration(
+                  hintText: 'note_content_hint'.tr,
                   border: InputBorder.none,
                 ),
                 style: Theme.of(context).textTheme.bodyMedium,

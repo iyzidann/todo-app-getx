@@ -18,7 +18,7 @@ class EditTodoScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Edit Todo"),
+        title: Text('edit_todo'.tr),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
@@ -26,8 +26,8 @@ class EditTodoScreen extends StatelessWidget {
               final newText = textController.text.trim();
               if (newText.isEmpty) {
                 Get.snackbar(
-                  "Gagal",
-                  "Todo tidak boleh kosong",
+                  'oops'.tr,
+                  'empty_todo_warning'.tr,
                   snackPosition: SnackPosition.BOTTOM,
                 );
                 return;
@@ -44,8 +44,8 @@ class EditTodoScreen extends StatelessWidget {
           children: [
             TextField(
               controller: textController,
-              decoration: const InputDecoration(
-                hintText: "Edit todo...",
+              decoration: InputDecoration(
+                hintText: 'todo_hint'.tr,
                 border: InputBorder.none,
               ),
               style: Theme.of(context).textTheme.titleMedium,

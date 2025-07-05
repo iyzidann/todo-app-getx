@@ -14,7 +14,7 @@ class AddNoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tambah Catatan"),
+        title: Text('add_note'.tr),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -22,8 +22,8 @@ class AddNoteScreen extends StatelessWidget {
           children: [
             TextField(
               controller: titleC,
-              decoration: const InputDecoration(
-                hintText: "Judul catatan",
+              decoration: InputDecoration(
+                hintText: 'note_title_hint'.tr,
                 border: InputBorder.none,
               ),
               style: Theme.of(context).textTheme.titleMedium,
@@ -33,8 +33,8 @@ class AddNoteScreen extends StatelessWidget {
             Expanded(
               child: TextField(
                 controller: contentC,
-                decoration: const InputDecoration(
-                  hintText: "Tulis isi catatan...",
+                decoration: InputDecoration(
+                  hintText: 'note_content_hint'.tr,
                   border: InputBorder.none,
                 ),
                 style: Theme.of(context).textTheme.bodyMedium,
@@ -50,7 +50,7 @@ class AddNoteScreen extends StatelessWidget {
                 onPressed: () {
                   if (titleC.text.trim().isEmpty &&
                       contentC.text.trim().isEmpty) {
-                    Get.snackbar("Oops", "Catatan tidak boleh kosong",
+                    Get.snackbar('oops'.tr, 'empty_note_warning'.tr,
                         snackPosition: SnackPosition.BOTTOM);
                     return;
                   }
@@ -61,7 +61,7 @@ class AddNoteScreen extends StatelessWidget {
                   Get.back();
                 },
                 icon: const Icon(Icons.check),
-                label: const Text("Simpan"),
+                label: Text('save'.tr),
                 style: TextButton.styleFrom(
                   foregroundColor: Theme.of(context).colorScheme.primary,
                   padding: const EdgeInsets.symmetric(vertical: 14),

@@ -18,8 +18,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (controller.todos.isEmpty) {
-          return const Center(
-            child: Text("Todo kosong 😴", style: TextStyle(fontSize: 16)),
+          return Center(
+            child: Text('empty_todo'.tr, style: TextStyle(fontSize: 16)),
           );
         }
 

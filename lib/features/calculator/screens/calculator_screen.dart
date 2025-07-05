@@ -23,7 +23,7 @@ class CalculatorScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text("Kalkulator"),
+        title: Text('calculator'.tr),
         centerTitle: true,
       ),
       body: Column(

@@ -29,11 +29,11 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
-        items: const [
+        items: [
           BottomNavigationBarItem(icon: Icon(Icons.check_circle), label: "Todo"),
-          BottomNavigationBarItem(icon: Icon(Icons.note), label: "Notes"),
-          BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "Kalkulator",),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+          BottomNavigationBarItem(icon: Icon(Icons.note), label: 'notes'.tr),
+          BottomNavigationBarItem(icon: Icon(Icons.calculate), label: 'calculator'.tr,),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings'.tr),
         ],
       ),
     );
