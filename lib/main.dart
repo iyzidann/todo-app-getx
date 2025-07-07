@@ -4,7 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'routes/app_routes.dart';
 import 'themes/app_theme.dart';
 import 'controllers/theme_controller.dart';
-import 'translations/app_translations.dart';
+import 'localization/app_translations.dart';
 import 'controllers/language_controller.dart';
 
 void main() async {
