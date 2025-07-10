@@ -50,9 +50,29 @@
 
 <div align="center">
 
-| Todo Screen | Notes Screen | Calculator | Settings |
-|-------------|--------------|------------|----------|
-| ![Todo](assets/screenshots/todo.jpeg) | ![Notes](assets/screenshots/note.jpeg) | ![Calculator](assets/screenshots/calculator.jpeg) | ![Settings](assets/screenshots/setting.jpeg) |
+<table>
+  <tr>
+    <td align="center"><b>Todo</b></td>
+    <td align="center"><b>Notes</b></td>
+    <td align="center"><b>Calculator</b></td>
+    <td align="center"><b>Settings</b></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="assets/screenshots/todo.jpeg" alt="Todo" width="180" style="border-radius:12px; box-shadow:0 2px 8px #0002;">
+    </td>
+    <td>
+      <img src="assets/screenshots/note.jpeg" alt="Notes" width="180" style="border-radius:12px; box-shadow:0 2px 8px #0002;">
+    </td>
+    <td>
+      <img src="assets/screenshots/calculator.jpeg" alt="Calculator" width="180" style="border-radius:12px; box-shadow:0 2px 8px #0002;">
+    </td>
+    <td>
+      <img src="assets/screenshots/setting.jpeg" alt="Settings" width="180" style="border-radius:12px; box-shadow:0 2px 8px #0002;">
+    </td>
+  </tr>
+</table>
+
 
 </div>
 
