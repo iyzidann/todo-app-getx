@@ -33,7 +33,6 @@
 - ➕ Basic arithmetic operations
 - ➕ Scientific calculator functions
 - ➕ Clean and modern UI
-- ➕ Real-time calculation display
 
 ### 🌍 **Multilingual Support**
 - 🌐 English and Indonesian languages
