@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import '../features/main/screens/main_screen.dart';
-import '../features/todo/screens/home_screen.dart';
+import '../features/todo/screens/todo_screen.dart';
 import '../features/todo/screens/add_todo_screen.dart';
 import '../features/todo/screens/edit_todo_screen.dart';
 import '../features/notes/screens/note_screen.dart';
