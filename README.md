@@ -5,11 +5,11 @@
 ![Flutter](https://img.shields.io/badge/Flutter-3.5.3-blue?style=for-the-badge&logo=flutter)
 ![GetX](https://img.shields.io/badge/GetX-4.6.6-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-0.1.2-purple?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-0.1.3-purple?style=for-the-badge)
 
 *A modern Flutter application built with GetX for state management, featuring Todo management, Notes, Calculator, and multilingual support.*
 
-<!-- [![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/flutter_getx/releases/latest)  -->
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/flutter_getx/releases/latest)
 
 </div>
 
@@ -52,8 +52,16 @@
 
 | Todo Screen | Notes Screen | Calculator | Settings |
 |-------------|--------------|------------|----------|
-| ![Todo](assets/screenshots/todo_screenshot.jpeg) | ![Notes](assets/screenshots/note_screenshot.jpeg) | ![Calculator](assets/screenshots/calculator_screenshot.jpeg) | ![Settings](assets/screenshots/setting.jpeg) |
+| ![Todo](assets/screenshots/todo.jpeg) | ![Notes](assets/screenshots/note.jpeg) | ![Calculator](assets/screenshots/calculator.jpeg) | ![Settings](assets/screenshots/setting.jpeg) |
 
 </div>
 
 ---
+
+## 📋 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a complete list of changes.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
