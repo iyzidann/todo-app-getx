@@ -9,9 +9,17 @@
 
 *A modern Flutter application built with GetX for state management, featuring Todo management, Notes, Calculator, and multilingual support.*
 
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/flutter_getx/releases/latest)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/todo-app-flutter/releases/download/v0.1.3/app-release.apk)
 
 </div>
+
+---
+
+## 📦 Download APK
+
+Kamu bisa mencoba aplikasi ini di perangkat Android dengan mengunduh file APK versi terbaru berikut:
+
+➡️ [Download APK (v0.1.3)](https://github.com/iyzidann/todo-app-flutter/releases/download/v0.1.3/app-release.apk)
 
 ---
 
@@ -71,7 +79,6 @@
     </td>
   </tr>
 </table>
-
 
 </div>
 
