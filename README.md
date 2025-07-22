@@ -15,14 +15,6 @@
 
 ---
 
-## 📦 Download APK
-
-Kamu bisa mencoba aplikasi ini di perangkat Android dengan mengunduh file APK versi terbaru berikut:
-
-➡️ [Download APK (v0.1.3)](https://github.com/iyzidann/todo-app-flutter/releases/download/v0.1.3/app-release.apk)
-
----
-
 ## ✨ Features
 
 ### 🎯 **Todo Management**
