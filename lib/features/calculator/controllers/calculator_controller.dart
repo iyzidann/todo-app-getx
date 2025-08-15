@@ -4,20 +4,40 @@ import 'package:math_expressions/math_expressions.dart';
 class CalculatorController extends GetxController {
   var input = ''.obs;
   var result = ''.obs;
+  var lastWasEqual = false; 
 
   void append(String value) {
     if (value == 'C') {
       input.value = '';
       result.value = '';
-    } else if (value == '=') {
+      lastWasEqual = false;
+    } 
+    else if (value == '=') {
       _calculate();
-    } else if (value == '⌫') {
+      lastWasEqual = true;
+    } 
+    else if (value == '⌫') {
       if (input.isNotEmpty) {
         input.value = input.value.substring(0, input.value.length - 1);
       }
-    } else {
-      input.value += value;
+    } 
+    else {
+      if (lastWasEqual && _isOperator(value)) {
+        // kalau baru selesai operasi dan user tekan operator
+        input.value = result.value + value;
+        lastWasEqual = false;
+      } else if (lastWasEqual && !_isOperator(value)) {
+        // kalau baru selesai operasi dan user tekan angka
+        input.value = value;
+        lastWasEqual = false;
+      } else {
+        input.value += value;
+      }
     }
+  }
+
+  bool _isOperator(String value) {
+    return ['+', '-', '×', '÷'].contains(value);
   }
 
   void _calculate() {

@@ -30,36 +30,42 @@ class CalculatorScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 16),
           Obx(() => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                  decoration: BoxDecoration(
-                    color: theme.cardColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        controller.input.value,
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontSize: 28,
-                          color: theme.colorScheme.onBackground.withOpacity(0.7),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        controller.result.value,
-                        style: theme.textTheme.displaySmall?.copyWith(
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold,
-                          color: theme.colorScheme.primary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Container(
+        height: 150,
+        width: double.infinity, 
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        decoration: BoxDecoration(
+          color: theme.cardColor.withOpacity(0.05),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end, 
+          crossAxisAlignment: CrossAxisAlignment.end, 
+          children: [
+            Text(
+              controller.input.value,
+              textAlign: TextAlign.right, 
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontSize: 28,
+                color: theme.colorScheme.onBackground.withOpacity(0.7),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              controller.result.value,
+              textAlign: TextAlign.right, 
+              style: theme.textTheme.displaySmall?.copyWith(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: theme.colorScheme.primary,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ))
+,
           const SizedBox(height: 24),
           Expanded(
             child: Padding(

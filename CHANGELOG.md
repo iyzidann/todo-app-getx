@@ -7,7 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.3] - 2024-01-XX
+## [0.1.4] - 2025-08-15
+
+### Added
+- N/A
+
+### Changed
+- Enhanced UX on Calculator
+
+### Fixed
+- Minor bug fixes
+
+## [0.1.3] - 2025-07-11
 
 ### Added
 - Bug fixes and performance improvements
@@ -19,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Minor bug fixes
 
-## [0.1.2] - 2024-01-XX
+## [0.1.2] - 2025
 
 ### Added
 - Todo management with GetX state management
