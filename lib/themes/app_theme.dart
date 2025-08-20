@@ -19,7 +19,7 @@ class AppTheme {
       foregroundColor: Colors.white,
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(Colors.black),
+      fillColor: WidgetStateProperty.all(Colors.black),
     ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: Colors.black),
@@ -52,7 +52,7 @@ class AppTheme {
       foregroundColor: Colors.black,
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStatePropertyAll(Colors.white),
+      fillColor: WidgetStatePropertyAll(Colors.white),
     ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: Colors.white),

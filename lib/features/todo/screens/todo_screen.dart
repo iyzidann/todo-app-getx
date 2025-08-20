@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../widgets/delete_confirmation_modal.dart';
 import '../controllers/todo_controller.dart';
 import '../../../controllers/theme_controller.dart';
 import '../../../routes/app_routes.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Todo List"),
+        title: Text('todo'.tr),
       ),
       body: Obx(() {
         if (controller.todos.isEmpty) {
@@ -71,7 +72,12 @@ class HomeScreen extends StatelessWidget {
                       visualDensity: VisualDensity.compact,
                     ),
                     IconButton(
-                      onPressed: () => controller.removeTodo(index),
+                      onPressed: () => DeleteConfirmationModal.show(
+                        context: Get.context!,
+                        title: 'delete_todo'.tr,
+                        message: 'delete_message'.tr,
+                        onConfirm: () => controller.removeTodo(index),
+                      ),
                       icon: const Icon(Icons.delete_outline, size: 20),
                       visualDensity: VisualDensity.compact,
                     ),

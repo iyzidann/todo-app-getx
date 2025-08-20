@@ -1,6 +1,7 @@
 import 'package:cihuy_note/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../widgets/delete_confirmation_modal.dart';
 import '../controllers/note_controller.dart';
 import '../../../widgets/empty_state.dart';
 
@@ -22,7 +23,7 @@ class NoteScreen extends StatelessWidget {
             title: 'empty_note'.tr,
             subtitle: 'empty_note_subs'.tr,
             buttonText: 'add_note'.tr,
-            onButtonPressed: () => Get.toNamed('/add-note'),
+            onButtonPressed: () => Get.toNamed(AppRoutes.addNote),
           );
         }
 
@@ -39,7 +40,7 @@ class NoteScreen extends StatelessWidget {
               ),
               elevation: 1,
               child: InkWell(
-                onTap: () => Get.toNamed('/view-note', arguments: {
+                onTap: () => Get.toNamed(AppRoutes.viewNote, arguments: {
                   'note': note,
                   'index': index,
                 }),
@@ -79,10 +80,15 @@ class NoteScreen extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        onPressed: () => controller.deleteNote(index),
-                        icon: const Icon(Icons.delete_outline, size: 20),
-                        visualDensity: VisualDensity.compact,
-                      )
+                      onPressed: () => DeleteConfirmationModal.show(
+                        context: Get.context!,
+                        title: 'delete_note'.tr,
+                        message: 'delete_message'.tr,
+                        onConfirm: () => controller.deleteNote(index),
+                      ),
+                      icon: const Icon(Icons.delete_outline, size: 20),
+                      visualDensity: VisualDensity.compact,
+                    ),
                     ],
                   ),
                 ),

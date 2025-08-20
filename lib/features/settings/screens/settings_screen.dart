@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = themeController.isDark;
     final textColor = Theme.of(context).textTheme.bodyLarge?.color;
-    final containerColor = Theme.of(context).colorScheme.surfaceVariant;
+    final containerColor = Theme.of(context).colorScheme.surfaceContainerHighest;
 
     return Scaffold(
       appBar: AppBar(

@@ -31,13 +31,13 @@ class EmptyState extends StatelessWidget {
           children: [
             Image.asset(
               imageAsset,
-              height: 170,
+              height: 140,
             ),
             const SizedBox(height: 24),
             Text(
               title,
               style: theme.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold, fontSize: 22,
+                fontWeight: FontWeight.bold, fontSize: 20,
               ),
               textAlign: TextAlign.center,
             ),
@@ -46,26 +46,40 @@ class EmptyState extends StatelessWidget {
               subtitle,
               style: theme.textTheme.bodyLarge?.copyWith(
                 color: theme.textTheme.bodyLarge?.color?.withOpacity(0.7),
+                fontSize: 14,
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 35),
             ElevatedButton.icon(
-              onPressed: onButtonPressed,
-              icon: const Icon(Icons.add),
-              label: Text(buttonText),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: buttonColor ??
-                    theme.floatingActionButtonTheme.backgroundColor,
-                foregroundColor: buttonTextColor ??
-                    theme.floatingActionButtonTheme.foregroundColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 12),
-              ),
-            ),
+  onPressed: onButtonPressed,
+  icon: const Icon(
+    Icons.add,
+    size: 20, 
+  ),
+  label: Text(
+    buttonText,
+    style: const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: buttonColor ??
+        theme.floatingActionButtonTheme.backgroundColor,
+    foregroundColor: buttonTextColor ??
+        theme.floatingActionButtonTheme.foregroundColor,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+    ),
+    padding: const EdgeInsets.symmetric(
+      horizontal: 40,
+      vertical: 10, // jangan terlalu besar biar sejajar
+    ),
+    alignment: Alignment.center, // pastikan konten di tengah
+  ),
+),
+
           ],
         ),
       ),
