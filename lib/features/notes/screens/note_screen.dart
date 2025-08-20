@@ -1,6 +1,8 @@
+import 'package:cihuy_note/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/note_controller.dart';
+import '../../../widgets/empty_state.dart';
 
 class NoteScreen extends StatelessWidget {
   final controller = Get.put(NoteController());
@@ -15,11 +17,12 @@ class NoteScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (controller.notes.isEmpty) {
-          return Center(
-            child: Text(
-              'empty_note'.tr,
-              style: TextStyle(fontSize: 16),
-            ),
+          return EmptyState(
+            imageAsset: 'assets/images/empty_state.png',
+            title: 'empty_note'.tr,
+            subtitle: 'empty_note_subs'.tr,
+            buttonText: 'add_note'.tr,
+            onButtonPressed: () => Get.toNamed('/add-note'),
           );
         }
 
@@ -42,7 +45,8 @@ class NoteScreen extends StatelessWidget {
                 }),
                 borderRadius: BorderRadius.circular(12),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -54,7 +58,10 @@ class NoteScreen extends StatelessWidget {
                           children: [
                             Text(
                               note.title,
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -84,10 +91,14 @@ class NoteScreen extends StatelessWidget {
           },
         );
       }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed('/add-note'),
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: Obx(() {
+        return controller.notes.isNotEmpty
+            ? FloatingActionButton(
+                onPressed: () => Get.toNamed(AppRoutes.addNote),
+                child: const Icon(Icons.add),
+              )
+            : const SizedBox.shrink();
+      }),
     );
   }
 }

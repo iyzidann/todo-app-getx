@@ -13,6 +13,8 @@ class TodoController extends GetxController {
     if (saved != null) {
       todos.assignAll(saved.map((e) => TodoModel.fromJson(e)).toList());
     }
+    
+    todos.sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
     ever(todos, (_) {
       box.write('todos', todos.map((e) => e.toJson()).toList());
@@ -22,6 +24,7 @@ class TodoController extends GetxController {
   void addTodo(String title) {
     if (title.isNotEmpty) {
       todos.add(TodoModel(title: title));
+      todos.sort((a, b) => b.createdAt.compareTo(a.createdAt));
     }
   }
 

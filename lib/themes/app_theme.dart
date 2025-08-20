@@ -8,7 +8,6 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
-      elevation: 0.5,
     ),
     colorScheme: ColorScheme.light(
       primary: Colors.black,

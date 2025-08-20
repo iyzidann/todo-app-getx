@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/todo_controller.dart';
 import '../../../controllers/theme_controller.dart';
 import '../../../routes/app_routes.dart';
+import '../../../widgets/empty_state.dart';
 
 class HomeScreen extends StatelessWidget {
   final TodoController controller = Get.put(TodoController());
@@ -18,8 +19,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (controller.todos.isEmpty) {
-          return Center(
-            child: Text('empty_todo'.tr, style: TextStyle(fontSize: 16)),
+          return EmptyState(
+            imageAsset: 'assets/images/empty_state.png',
+            title: 'empty_todo'.tr,
+            subtitle: 'empty_todo_subs'.tr,
+            buttonText: 'add_todo'.tr,
+            onButtonPressed: () => Get.toNamed(AppRoutes.addTodo),
           );
         }
 
@@ -33,7 +38,8 @@ class HomeScreen extends StatelessWidget {
               onTap: () => controller.toggleTodo(index),
               borderRadius: BorderRadius.circular(8),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                 child: Row(
                   children: [
                     Checkbox(
@@ -50,14 +56,14 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 15,
                           color: Theme.of(context).textTheme.bodyMedium?.color,
-                          decoration: todo.isDone
-                              ? TextDecoration.lineThrough
-                              : null,
+                          decoration:
+                              todo.isDone ? TextDecoration.lineThrough : null,
                         ),
                       ),
                     ),
                     IconButton(
-                      onPressed: () => Get.toNamed(AppRoutes.editTodo, arguments: {
+                      onPressed: () =>
+                          Get.toNamed(AppRoutes.editTodo, arguments: {
                         'index': index,
                         'value': todo.title,
                       }),
@@ -76,10 +82,14 @@ class HomeScreen extends StatelessWidget {
           },
         );
       }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed(AppRoutes.addTodo),
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: Obx(() {
+        return controller.todos.isNotEmpty
+            ? FloatingActionButton(
+                onPressed: () => Get.toNamed(AppRoutes.addTodo),
+                child: const Icon(Icons.add),
+              )
+            : const SizedBox.shrink();
+      }),
     );
   }
 }
