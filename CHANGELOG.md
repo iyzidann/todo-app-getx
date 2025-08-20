@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4] - 2025-08-20
+
+### Added
+- Added bottom modal sheet for delete confirmation
+
+### Changed
+- Updated empty state 
+- updated bottom navbar better ui
+
+### Fixed
+- Minor bug fixes
+
 ## [0.1.4] - 2025-08-15
 
 ### Added
