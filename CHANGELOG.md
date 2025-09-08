@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5] - 2025-09-08
+
+### Added
+- Automatic comma thousands separator formatting for numbers >=1000 in calculator input and result display.
+
+### Changed
+- N/A
+
+### Fixed
+- Note preview stretching issue in notes list by limiting content display to 3 lines with ellipsis overflow.
+- Calculator error when continuing operations (e.g., appending operator or number after =) by unformatting result before concatenation for accurate parsing.
+
 ## [0.2.4] - 2025-08-20
 
 ### Added

@@ -71,6 +71,8 @@ class NoteScreen extends StatelessWidget {
                               note.content.length > 100
                                   ? '${note.content.substring(0, 100)}...'
                                   : note.content,
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium

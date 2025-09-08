@@ -6,7 +6,7 @@ A modern Flutter application built with GetX for state management, featuring Tod
 [![GetX](https://img.shields.io/badge/GetX-4.6.6-orange?style=for-the-badge)](https://pub.dev/packages/get)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.2.4-purple?style=for-the-badge)](CHANGELOG.md)
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/todo-app-flutter/releases/download/v0.2.4/app-release.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/iyzidann/todo-app-getx/releases/download/v0.2.5/app-release.apk)
 
 ## Features
 

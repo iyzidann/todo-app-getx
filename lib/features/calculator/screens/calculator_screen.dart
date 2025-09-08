@@ -44,8 +44,8 @@ class CalculatorScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end, 
           children: [
             Text(
-              controller.input.value,
-              textAlign: TextAlign.right, 
+              controller.displayInput.value,
+              textAlign: TextAlign.right,
               style: theme.textTheme.titleLarge?.copyWith(
                 fontSize: 28,
                 color: theme.colorScheme.onBackground.withOpacity(0.7),
