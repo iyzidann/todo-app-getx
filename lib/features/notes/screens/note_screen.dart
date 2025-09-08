@@ -1,6 +1,6 @@
-import 'package:cihuy_note/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../routes/app_routes.dart';
 import '../../../widgets/delete_confirmation_modal.dart';
 import '../controllers/note_controller.dart';
 import '../../../widgets/empty_state.dart';
